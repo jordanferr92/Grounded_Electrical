@@ -1,0 +1,700 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Grounded Electrical Company</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#0f172a',
+            secondary: '#1e293b',
+            accent: '#d4af37',
+          },
+          fontFamily: {
+            heading: ['Plus Jakarta Sans', 'sans-serif'],
+            body: ['Inter', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', sans-serif; color: #334155; background: #fafaf9; margin: 0; }
+    h1, h2, h3, h4, h5, h6 { font-family: 'Plus Jakarta Sans', sans-serif; }
+    .animate-on-scroll { opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease, transform 0.6s ease; }
+    .animate-on-scroll.visible { opacity: 1; transform: translateY(0); }
+    /* Layout guard: force all top-level elements to stack vertically */
+    body > header, body > section, body > footer, body > nav,
+    #lp-root > header, #lp-root > section, #lp-root > footer, #lp-root > nav {
+      display: block !important;
+      width: 100% !important;
+      float: none !important;
+    }
+    #lp-root {
+      display: flex !important;
+      flex-direction: column !important;
+      width: 100% !important;
+      overflow-x: hidden !important;
+    }
+  </style>
+</head>
+<body style="display:block; width:100%; margin:0; padding:0;">
+<div id="lp-root">
+<header class="sticky top-0 z-50 bg-[#fafaf9]/90 backdrop-blur-xl border-b border-gray-200" style="font-family: 'Inter', sans-serif;">
+  <div class="max-w-6xl mx-auto px-6 sm:px-8 py-4 flex items-center justify-between">
+    <a href="#" class="flex items-center gap-2 group">
+      <i data-lucide="zap" class="w-7 h-7 text-[#d4af37] group-hover:scale-110 transition-transform duration-300"></i>
+      <span class="text-xl font-bold text-[#0f172a] tracking-tight" style="font-family: 'Plus Jakarta Sans', sans-serif;">Grounded Electrical</span>
+    </a>
+    
+    <nav class="hidden md:flex items-center gap-8">
+      <a href="#services" class="text-[#334155] hover:text-[#d4af37] font-medium transition-colors duration-300 text-sm uppercase tracking-wide">Services</a>
+      <a href="#process" class="text-[#334155] hover:text-[#d4af37] font-medium transition-colors duration-300 text-sm uppercase tracking-wide">Process</a>
+      <a href="#testimonials" class="text-[#334155] hover:text-[#d4af37] font-medium transition-colors duration-300 text-sm uppercase tracking-wide">Reviews</a>
+      <a href="#faq" class="text-[#334155] hover:text-[#d4af37] font-medium transition-colors duration-300 text-sm uppercase tracking-wide">FAQ</a>
+      <a href="#contact" class="px-6 py-2.5 bg-[#0f172a] text-white rounded-lg hover:bg-[#1e293b] transition-all duration-300 font-medium shadow-lg shadow-[#0f172a]/10 text-sm uppercase tracking-wide">Get a Quote</a>
+    </nav>
+    
+    <button id="mobile-menu-btn" class="md:hidden text-[#0f172a] p-2 hover:text-[#d4af37] transition-colors" aria-label="Toggle navigation">
+      <i data-lucide="menu" class="w-6 h-6"></i>
+    </button>
+  </div>
+  
+  <div id="mobile-menu" class="hidden md:hidden bg-[#fafaf9] border-b border-gray-200 px-6 py-4 absolute w-full shadow-2xl">
+    <div class="flex flex-col gap-5">
+      <a href="#services" class="text-[#334155] font-medium text-sm uppercase tracking-wide hover:text-[#d4af37]">Services</a>
+      <a href="#process" class="text-[#334155] font-medium text-sm uppercase tracking-wide hover:text-[#d4af37]">Process</a>
+      <a href="#testimonials" class="text-[#334155] font-medium text-sm uppercase tracking-wide hover:text-[#d4af37]">Reviews</a>
+      <a href="#faq" class="text-[#334155] font-medium text-sm uppercase tracking-wide hover:text-[#d4af37]">FAQ</a>
+      <a href="#contact" class="px-5 py-3 text-center bg-[#0f172a] text-white rounded-lg font-medium mt-2 text-sm uppercase tracking-wide shadow-md">Get a Quote</a>
+    </div>
+  </div>
+  
+  <script>
+    document.getElementById('mobile-menu-btn').addEventListener('click', function() {
+      document.getElementById('mobile-menu').classList.toggle('hidden');
+    });
+  </script>
+</header>
+
+<section id="hero" class="bg-[#fafaf9] py-20 md:py-28 lg:py-32 overflow-hidden relative" style="font-family: 'Inter', sans-serif;">
+  <div class="absolute top-0 right-0 -translate-y-24 translate-x-1/3 w-[800px] h-[800px] bg-[#d4af37]/5 rounded-full blur-3xl pointer-events-none"></div>
+  <div class="absolute bottom-0 left-0 translate-y-1/3 -translate-x-1/4 w-[600px] h-[600px] bg-[#0f172a]/5 rounded-full blur-3xl pointer-events-none"></div>
+
+  <div class="max-w-6xl mx-auto px-6 sm:px-8">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-20 items-center">
+      
+      <div class="relative z-10 animate-on-scroll visible">
+        <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#d4af37]/10 border border-[#d4af37]/20 mb-8 shadow-sm">
+          <i data-lucide="shield-check" class="w-4 h-4 text-[#d4af37]"></i>
+          <span class="text-xs font-bold tracking-widest text-[#0f172a] uppercase">Premium Electrical Services</span>
+        </div>
+        
+        <h1 class="text-5xl md:text-6xl lg:text-7xl font-extrabold text-[#0f172a] leading-[1.1] mb-6 tracking-tight" style="font-family: 'Plus Jakarta Sans', sans-serif;">
+          Precision Power.<br>
+          <span class="text-transparent bg-clip-text bg-gradient-to-r from-[#0f172a] to-[#d4af37]">Unmatched Reliability.</span>
+        </h1>
+        
+        <p class="text-lg text-[#334155] leading-relaxed mb-10 max-w-lg font-medium">
+          From custom 220v ranch circuits to complete high-end panel installations, Grounded Electrical Company delivers prompt, professional, and fairly-priced solutions you can trust to keep your home running safely.
+        </p>
+        
+        <div class="flex flex-col sm:flex-row gap-4 mb-14">
+          <a href="#contact" class="inline-flex items-center justify-center gap-2 px-8 py-4 bg-[#0f172a] text-white rounded-xl hover:bg-[#1e293b] hover:shadow-xl hover:shadow-[#0f172a]/20 transition-all duration-300 font-semibold text-lg group">
+            Request a Quote
+            <i data-lucide="arrow-right" class="w-5 h-5 group-hover:translate-x-1 transition-transform"></i>
+          </a>
+          <a href="#services" class="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white text-[#0f172a] border border-gray-200 rounded-xl hover:border-[#d4af37] hover:bg-[#fafaf9] transition-all duration-300 font-semibold text-lg shadow-sm">
+            Our Services
+          </a>
+        </div>
+
+        <div class="flex items-center gap-6 pt-8 border-t border-gray-200">
+          <div class="flex -space-x-3">
+            <div class="w-12 h-12 rounded-full bg-[#1e293b] border-2 border-[#fafaf9] flex items-center justify-center text-white text-sm font-bold shadow-sm">GK</div>
+            <div class="w-12 h-12 rounded-full bg-[#d4af37] border-2 border-[#fafaf9] flex items-center justify-center text-[#0f172a] text-sm font-bold shadow-sm">TM</div>
+            <div class="w-12 h-12 rounded-full bg-[#0f172a] border-2 border-[#fafaf9] flex items-center justify-center text-white text-sm font-bold shadow-sm">
+              <i data-lucide="plus" class="w-4 h-4"></i>
+            </div>
+          </div>
+          <div>
+            <div class="flex items-center gap-1 mb-1">
+              <i data-lucide="star" class="w-4 h-4 text-[#d4af37] fill-[#d4af37]"></i>
+              <i data-lucide="star" class="w-4 h-4 text-[#d4af37] fill-[#d4af37]"></i>
+              <i data-lucide="star" class="w-4 h-4 text-[#d4af37] fill-[#d4af37]"></i>
+              <i data-lucide="star" class="w-4 h-4 text-[#d4af37] fill-[#d4af37]"></i>
+              <i data-lucide="star" class="w-4 h-4 text-[#d4af37] fill-[#d4af37]"></i>
+            </div>
+            <p class="text-sm font-semibold text-[#0f172a]">"Friday quote to Monday completion."</p>
+            <p class="text-xs text-[#334155]">Rated 5.0 by local homeowners</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="relative w-full h-[500px] lg:h-[650px] rounded-2xl overflow-hidden shadow-2xl group animate-on-scroll visible">
+        <div class="absolute inset-0 border border-[#d4af37]/30 rounded-2xl z-20 pointer-events-none group-hover:border-[#d4af37]/60 transition-colors duration-500 mix-blend-overlay"></div>
+        
+        <img 
+          src="https://zgnpmogdjnnhpwewavnr.supabase.co/storage/v1/object/public/project-images/35f6e915-7066-40ce-bbeb-4c6e94c3e72c/1777921079062-kqogi.png" 
+          alt="Professional electrician inspecting a modern, high-end electrical panel in a luxury home" 
+          class="absolute inset-0 w-full h-full object-cover rounded-2xl transition-transform duration-1000 group-hover:scale-105 z-0"
+        />
+        
+        <div class="absolute inset-0 bg-gradient-to-t from-[#0f172a]/80 via-transparent to-transparent z-10"></div>
+        
+        <div class="absolute bottom-6 left-6 right-6 z-20 bg-white/95 backdrop-blur-xl p-5 rounded-xl border border-white/20 shadow-2xl flex items-center gap-5 transform translate-y-0 group-hover:-translate-y-2 transition-transform duration-500">
+          <div class="w-14 h-14 bg-[#0f172a] rounded-full flex items-center justify-center shrink-0 shadow-inner">
+            <i data-lucide="zap" class="w-6 h-6 text-[#d4af37] fill-[#d4af37]/20"></i>
+          </div>
+          <div>
+            <h4 class="text-[#0f172a] font-bold text-lg leading-tight mb-1" style="font-family: 'Plus Jakarta Sans', sans-serif;">Arrived On Time</h4>
+            <p class="text-sm text-[#334155] font-medium leading-snug">Crew of three handled complex 220v installations with zero hassle.</p>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+</section>
+
+<section id="stats" class="py-20 md:py-28 lg:py-32 bg-[#0f172a] relative overflow-hidden">
+  <!-- Subtle background pattern -->
+  <div class="absolute inset-0 opacity-5" style="background-image: radial-gradient(#d4af37 1px, transparent 1px); background-size: 32px 32px;"></div>
+  
+  <div class="max-w-6xl mx-auto px-6 sm:px-8 relative z-10">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-10 lg:gap-16">
+      
+      <!-- Stat 1 -->
+      <div class="animate-on-scroll text-center md:text-left group">
+        <div class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-[#1e293b] text-[#d4af37] mb-6 group-hover:scale-110 transition-transform duration-300 shadow-[0_0_20px_rgba(212,175,55,0.1)]">
+          <i data-lucide="clock" class="w-8 h-8"></i>
+        </div>
+        <h3 class="text-[#fafaf9] text-2xl font-bold mb-3 tracking-tight font-['Plus_Jakarta_Sans']">Punctual & Professional</h3>
+        <p class="text-[#fafaf9]/70 text-lg leading-relaxed font-['Inter']">Arriving on time with a fully equipped crew. "Friday quote, Monday done."</p>
+      </div>
+
+      <!-- Stat 2 -->
+      <div class="animate-on-scroll text-center md:text-left group" style="transition-delay: 100ms;">
+        <div class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-[#1e293b] text-[#d4af37] mb-6 group-hover:scale-110 transition-transform duration-300 shadow-[0_0_20px_rgba(212,175,55,0.1)]">
+          <i data-lucide="shield-check" class="w-8 h-8"></i>
+        </div>
+        <h3 class="text-[#fafaf9] text-2xl font-bold mb-3 tracking-tight font-['Plus_Jakarta_Sans']">Fair & Transparent</h3>
+        <p class="text-[#fafaf9]/70 text-lg leading-relaxed font-['Inter']">Reasonable, upfront pricing with zero hidden fees. Highly competitive quotes.</p>
+      </div>
+
+      <!-- Stat 3 -->
+      <div class="animate-on-scroll text-center md:text-left group" style="transition-delay: 200ms;">
+        <div class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-[#1e293b] text-[#d4af37] mb-6 group-hover:scale-110 transition-transform duration-300 shadow-[0_0_20px_rgba(212,175,55,0.1)]">
+          <i data-lucide="zap" class="w-8 h-8"></i>
+        </div>
+        <h3 class="text-[#fafaf9] text-2xl font-bold mb-3 tracking-tight font-['Plus_Jakarta_Sans']">Rapid Turnaround</h3>
+        <p class="text-[#fafaf9]/70 text-lg leading-relaxed font-['Inter']">From initial inspection to final execution, we move with premium efficiency.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section id="services" class="py-20 md:py-28 lg:py-32 bg-[#fafaf9]">
+  <div class="max-w-6xl mx-auto px-6 sm:px-8">
+    
+    <div class="text-center max-w-3xl mx-auto mb-16 md:mb-24 animate-on-scroll">
+      <span class="text-[#d4af37] text-sm font-bold uppercase tracking-[0.2em] mb-4 block">Premium Expertise</span>
+      <h2 class="text-4xl md:text-5xl font-bold text-[#0f172a] mb-6 font-['Plus_Jakarta_Sans']">Uncompromising Electrical Solutions</h2>
+      <p class="text-[#334155] text-lg leading-relaxed font-['Inter']">From complex 220v installations to comprehensive residential wiring, our three-man crews deliver master-level craftsmanship tailored to your exact specifications.</p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12">
+      
+      <!-- Service 1 -->
+      <div class="animate-on-scroll group bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-[0_20px_40px_rgba(15,23,42,0.08)] transition-all duration-500 border border-[#1e293b]/5">
+        <div class="relative h-64 overflow-hidden">
+          <div class="absolute inset-0 bg-[#0f172a]/20 group-hover:bg-transparent transition-colors duration-500 z-10"></div>
+          <img src="https://zgnpmogdjnnhpwewavnr.supabase.co/storage/v1/object/public/project-images/35f6e915-7066-40ce-bbeb-4c6e94c3e72c/1777921185602-mzso9a.png" alt="Professional electrician installing a custom 220v line and 20 amp circuit for a home garage" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+        </div>
+        <div class="p-8">
+          <div class="w-12 h-12 rounded-lg bg-[#fafaf9] flex items-center justify-center text-[#d4af37] mb-6 border border-[#1e293b]/10">
+            <i data-lucide="plug-zap" class="w-6 h-6"></i>
+          </div>
+          <h3 class="text-2xl font-bold text-[#0f172a] mb-3 font-['Plus_Jakarta_Sans']">Custom Circuits & 220v</h3>
+          <p class="text-[#334155] leading-relaxed mb-6 font-['Inter']">Specialized installations including 220 lines for heavy equipment, welders, and dedicated 20 amp circuits and boxes.</p>
+          <a href="#contact" class="inline-flex items-center text-[#0f172a] font-semibold hover:text-[#d4af37] transition-colors">
+            Request Quote <i data-lucide="arrow-right" class="w-4 h-4 ml-2"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- Service 2 -->
+      <div class="animate-on-scroll group bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-[0_20px_40px_rgba(15,23,42,0.08)] transition-all duration-500 border border-[#1e293b]/5" style="transition-delay: 100ms;">
+        <div class="relative h-64 overflow-hidden">
+          <div class="absolute inset-0 bg-[#0f172a]/20 group-hover:bg-transparent transition-colors duration-500 z-10"></div>
+          <img src="https://zgnpmogdjnnhpwewavnr.supabase.co/storage/v1/object/public/project-images/35f6e915-7066-40ce-bbeb-4c6e94c3e72c/1777921123898-1u46qr.png" alt="High-end residential electrical wiring and panel upgrade in a luxury home" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+        </div>
+        <div class="p-8">
+          <div class="w-12 h-12 rounded-lg bg-[#fafaf9] flex items-center justify-center text-[#d4af37] mb-6 border border-[#1e293b]/10">
+            <i data-lucide="home" class="w-6 h-6"></i>
+          </div>
+          <h3 class="text-2xl font-bold text-[#0f172a] mb-3 font-['Plus_Jakarta_Sans']">Premium Residential Wiring</h3>
+          <p class="text-[#334155] leading-relaxed mb-6 font-['Inter']">Complete ranch house to garage wiring, panel upgrades, and high-end residential electrical solutions executed flawlessly.</p>
+          <a href="#contact" class="inline-flex items-center text-[#0f172a] font-semibold hover:text-[#d4af37] transition-colors">
+            Request Quote <i data-lucide="arrow-right" class="w-4 h-4 ml-2"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- Service 3 -->
+      <div class="animate-on-scroll group bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-[0_20px_40px_rgba(15,23,42,0.08)] transition-all duration-500 border border-[#1e293b]/5" style="transition-delay: 200ms;">
+        <div class="relative h-64 overflow-hidden">
+          <div class="absolute inset-0 bg-[#0f172a]/20 group-hover:bg-transparent transition-colors duration-500 z-10"></div>
+          <img src="https://zgnpmogdjnnhpwewavnr.supabase.co/storage/v1/object/public/project-images/35f6e915-7066-40ce-bbeb-4c6e94c3e72c/1777921135871-bo4jxa.png" alt="Professional installation of a Generac home backup generator system" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+        </div>
+        <div class="p-8">
+          <div class="w-12 h-12 rounded-lg bg-[#fafaf9] flex items-center justify-center text-[#d4af37] mb-6 border border-[#1e293b]/10">
+            <i data-lucide="power" class="w-6 h-6"></i>
+          </div>
+          <h3 class="text-2xl font-bold text-[#0f172a] mb-3 font-['Plus_Jakarta_Sans']">Generac Installations</h3>
+          <p class="text-[#334155] leading-relaxed mb-6 font-['Inter']">Ensure your home never loses power with seamless, professional Generac home generator installations and maintenance.</p>
+          <a href="#contact" class="inline-flex items-center text-[#0f172a] font-semibold hover:text-[#d4af37] transition-colors">
+            Request Quote <i data-lucide="arrow-right" class="w-4 h-4 ml-2"></i>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section id="process" class="py-20 md:py-28 lg:py-32 bg-gradient-to-b from-[#1e293b] to-[#0f172a] text-[#fafaf9]">
+  <div class="max-w-6xl mx-auto px-6 sm:px-8">
+    
+    <div class="text-center max-w-3xl mx-auto mb-16 md:mb-24 animate-on-scroll">
+      <span class="text-[#d4af37] text-sm font-bold uppercase tracking-[0.2em] mb-4 block">Our Process</span>
+      <h2 class="text-4xl md:text-5xl font-bold text-white mb-6 font-['Plus_Jakarta_Sans']">The "Friday to Monday" Standard</h2>
+      <p class="text-[#fafaf9]/70 text-lg leading-relaxed font-['Inter']">We respect your time. Our clients consistently praise our rapid, no-nonsense approach from the first call to the final switch.</p>
+    </div>
+
+    <div class="relative">
+      <!-- Connecting Line (Desktop) -->
+      <div class="hidden md:block absolute top-1/2 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-[#d4af37]/50 to-transparent -translate-y-1/2 z-0"></div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-12 relative z-10">
+        
+        <!-- Step 1 -->
+        <div class="animate-on-scroll relative group text-center">
+          <div class="w-20 h-20 mx-auto bg-[#0f172a] border border-[#d4af37]/30 rounded-2xl flex items-center justify-center mb-8 group-hover:bg-[#d4af37] group-hover:border-[#d4af37] transition-all duration-300 shadow-[0_0_30px_rgba(15,23,42,0.5)]">
+            <i data-lucide="clipboard-list" class="w-8 h-8 text-[#d4af37] group-hover:text-[#0f172a] transition-colors duration-300"></i>
+          </div>
+          <div class="bg-[#1e293b]/50 backdrop-blur-sm p-8 rounded-2xl border border-white/5 group-hover:border-[#d4af37]/30 transition-colors">
+            <span class="text-[#d4af37] font-bold tracking-widest text-sm mb-2 block">STEP 01</span>
+            <h3 class="text-xl font-bold text-white mb-3 font-['Plus_Jakarta_Sans']">The Friday Quote</h3>
+            <p class="text-[#fafaf9]/70 font-['Inter']">We arrive promptly to inspect your needs and provide a highly reasonable, transparent quote.</p>
+          </div>
+        </div>
+
+        <!-- Step 2 -->
+        <div class="animate-on-scroll relative group text-center" style="transition-delay: 150ms;">
+          <div class="w-20 h-20 mx-auto bg-[#0f172a] border border-[#d4af37]/30 rounded-2xl flex items-center justify-center mb-8 group-hover:bg-[#d4af37] group-hover:border-[#d4af37] transition-all duration-300 shadow-[0_0_30px_rgba(15,23,42,0.5)]">
+            <i data-lucide="users" class="w-8 h-8 text-[#d4af37] group-hover:text-[#0f172a] transition-colors duration-300"></i>
+          </div>
+          <div class="bg-[#1e293b]/50 backdrop-blur-sm p-8 rounded-2xl border border-white/5 group-hover:border-[#d4af37]/30 transition-colors">
+            <span class="text-[#d4af37] font-bold tracking-widest text-sm mb-2 block">STEP 02</span>
+            <h3 class="text-xl font-bold text-white mb-3 font-['Plus_Jakarta_Sans']">The 3-Man Crew</h3>
+            <p class="text-[#fafaf9]/70 font-['Inter']">Our fully equipped crew arrives on time, executing complex wiring and installations with precision.</p>
+          </div>
+        </div>
+
+        <!-- Step 3 -->
+        <div class="animate-on-scroll relative group text-center" style="transition-delay: 300ms;">
+          <div class="w-20 h-20 mx-auto bg-[#0f172a] border border-[#d4af37]/30 rounded-2xl flex items-center justify-center mb-8 group-hover:bg-[#d4af37] group-hover:border-[#d4af37] transition-all duration-300 shadow-[0_0_30px_rgba(15,23,42,0.5)]">
+            <i data-lucide="check-circle" class="w-8 h-8 text-[#d4af37] group-hover:text-[#0f172a] transition-colors duration-300"></i>
+          </div>
+          <div class="bg-[#1e293b]/50 backdrop-blur-sm p-8 rounded-2xl border border-white/5 group-hover:border-[#d4af37]/30 transition-colors">
+            <span class="text-[#d4af37] font-bold tracking-widest text-sm mb-2 block">STEP 03</span>
+            <h3 class="text-xl font-bold text-white mb-3 font-['Plus_Jakarta_Sans']">Monday 9 AM Done</h3>
+            <p class="text-[#fafaf9]/70 font-['Inter']">Job completed swiftly and cleanly. Your premium electrical system is live and fully guaranteed.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="testimonials" class="py-20 md:py-28 lg:py-32 bg-[#fafaf9] overflow-hidden">
+  <div class="max-w-6xl mx-auto px-6 sm:px-8">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+      
+      <!-- Image Side -->
+      <div class="animate-on-scroll relative">
+        <div class="absolute -inset-4 bg-[#d4af37]/10 rounded-[2rem] transform -rotate-3 z-0"></div>
+        <div class="relative z-10 rounded-2xl overflow-hidden shadow-2xl border border-[#1e293b]/10">
+          <img src="https://zgnpmogdjnnhpwewavnr.supabase.co/storage/v1/object/public/project-images/35f6e915-7066-40ce-bbeb-4c6e94c3e72c/1777921268755-025fij.jpg" alt="Professional three-man electrical crew arriving on time in uniform" class="w-full h-auto object-cover">
+          
+          <!-- Floating Badge -->
+          <div class="absolute bottom-6 left-6 right-6 bg-white/90 backdrop-blur-md p-6 rounded-xl border border-white/20 shadow-lg">
+            <div class="flex items-center gap-4">
+              <div class="flex gap-1 text-[#d4af37]">
+                <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+              </div>
+              <span class="text-[#0f172a] font-bold font-['Plus_Jakarta_Sans']">5.0 Local Guide Rating</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Testimonials Side -->
+      <div class="space-y-8">
+        <div class="animate-on-scroll mb-10">
+          <span class="text-[#d4af37] text-sm font-bold uppercase tracking-[0.2em] mb-4 block">Client Reputation</span>
+          <h2 class="text-4xl md:text-5xl font-bold text-[#0f172a] mb-6 font-['Plus_Jakarta_Sans']">Built on Trust & Precision</h2>
+        </div>
+
+        <!-- Review 1 -->
+        <div class="animate-on-scroll bg-white p-8 rounded-2xl shadow-sm border border-[#1e293b]/5 hover:shadow-md transition-shadow relative">
+          <i data-lucide="quote" class="absolute top-8 right-8 w-12 h-12 text-[#d4af37] opacity-20"></i>
+          <div class="flex gap-1 text-[#d4af37] mb-4">
+            <i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i>
+          </div>
+          <p class="text-[#334155] text-lg leading-relaxed italic mb-6 font-['Inter']">"Grounded electric did a great job. The quote was reasonable. They arrived on time with a crew of three. They installed a 220 line for my welder from one end of my ranch house to the garage, installed a 20 amp circuit and box..."</p>
+          <div class="flex items-center gap-4">
+            <div class="w-12 h-12 bg-[#0f172a] rounded-full flex items-center justify-center text-[#d4af37] font-bold font-['Plus_Jakarta_Sans']">GK</div>
+            <div>
+              <h4 class="text-[#0f172a] font-bold font-['Plus_Jakarta_Sans']">George Krebs</h4>
+              <span class="text-[#334155] text-sm">Verified Client</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Review 2 -->
+        <div class="animate-on-scroll bg-white p-8 rounded-2xl shadow-sm border border-[#1e293b]/5 hover:shadow-md transition-shadow relative" style="transition-delay: 150ms;">
+          <i data-lucide="quote" class="absolute top-8 right-8 w-12 h-12 text-[#d4af37] opacity-20"></i>
+          <div class="flex gap-1 text-[#d4af37] mb-4">
+            <i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i>
+          </div>
+          <p class="text-[#334155] text-lg leading-relaxed italic mb-6 font-['Inter']">"Wonderful experience... Friday showed up for a quote and Monday by 9 AM job was done. They were fairly priced.... Unlike others we got quotes from. If you are in the area and looking for electrical..."</p>
+          <div class="flex items-center gap-4">
+            <div class="w-12 h-12 bg-[#0f172a] rounded-full flex items-center justify-center text-[#d4af37] font-bold font-['Plus_Jakarta_Sans']">TM</div>
+            <div>
+              <h4 class="text-[#0f172a] font-bold font-['Plus_Jakarta_Sans']">Tayush Mukherji</h4>
+              <span class="text-[#334155] text-sm">Local Guide</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="faq" class="py-20 md:py-28 lg:py-32 bg-white">
+  <div class="max-w-4xl mx-auto px-6 sm:px-8">
+    <div class="text-center mb-16 animate-on-scroll">
+      <h2 class="text-4xl md:text-5xl font-bold text-[#0f172a] mb-6 font-['Plus_Jakarta_Sans']">Frequent Inquiries</h2>
+      <p class="text-[#334155] text-lg font-['Inter']">Clear answers for your peace of mind.</p>
+    </div>
+
+    <div class="space-y-4 animate-on-scroll">
+      
+      <!-- FAQ Item 1 -->
+      <details class="group bg-[#fafaf9] rounded-xl border border-[#1e293b]/10 [&_summary::-webkit-details-marker]:hidden">
+        <summary class="flex items-center justify-between p-6 cursor-pointer text-xl font-bold text-[#0f172a] font-['Plus_Jakarta_Sans']">
+          Are your quotes really transparent?
+          <i data-lucide="chevron-down" class="w-6 h-6 text-[#d4af37] transition-transform duration-300 group-open:-rotate-180"></i>
+        </summary>
+        <div class="px-6 pb-6 text-[#334155] leading-relaxed font-['Inter']">
+          Absolutely. Our clients frequently praise us for being "fairly priced unlike others." We provide detailed, upfront quotes before any work begins, ensuring there are zero hidden fees or surprises.
+        </div>
+      </details>
+
+      <!-- FAQ Item 2 -->
+      <details class="group bg-[#fafaf9] rounded-xl border border-[#1e293b]/10 [&_summary::-webkit-details-marker]:hidden">
+        <summary class="flex items-center justify-between p-6 cursor-pointer text-xl font-bold text-[#0f172a] font-['Plus_Jakarta_Sans']">
+          How quickly can you complete an installation?
+          <i data-lucide="chevron-down" class="w-6 h-6 text-[#d4af37] transition-transform duration-300 group-open:-rotate-180"></i>
+        </summary>
+        <div class="px-6 pb-6 text-[#334155] leading-relaxed font-['Inter']">
+          We pride ourselves on rapid turnaround. It's not uncommon for us to quote a job on Friday and have it completely finished by Monday at 9 AM. We arrive on time with a fully equipped crew to get the job done efficiently.
+        </div>
+      </details>
+
+      <!-- FAQ Item 3 -->
+      <details class="group bg-[#fafaf9] rounded-xl border border-[#1e293b]/10 [&_summary::-webkit-details-marker]:hidden">
+        <summary class="flex items-center justify-between p-6 cursor-pointer text-xl font-bold text-[#0f172a] font-['Plus_Jakarta_Sans']">
+          Can you handle heavy-duty residential wiring?
+          <i data-lucide="chevron-down" class="w-6 h-6 text-[#d4af37] transition-transform duration-300 group-open:-rotate-180"></i>
+        </summary>
+        <div class="px-6 pb-6 text-[#334155] leading-relaxed font-['Inter']">
+          Yes. We specialize in custom setups, including running 220 lines across properties (e.g., house to garage for welders), installing 20 amp circuits, upgrading breaker boxes, and comprehensive Generac home generator installations.
+        </div>
+      </details>
+
+      <!-- FAQ Item 4 -->
+      <details class="group bg-[#fafaf9] rounded-xl border border-[#1e293b]/10 [&_summary::-webkit-details-marker]:hidden">
+        <summary class="flex items-center justify-between p-6 cursor-pointer text-xl font-bold text-[#0f172a] font-['Plus_Jakarta_Sans']">
+          Is your crew licensed and insured?
+          <i data-lucide="chevron-down" class="w-6 h-6 text-[#d4af37] transition-transform duration-300 group-open:-rotate-180"></i>
+        </summary>
+        <div class="px-6 pb-6 text-[#334155] leading-relaxed font-['Inter']">
+          Yes, Grounded Electrical Company is fully licensed, bonded, and insured. We bring premium, code-compliant craftsmanship to every single job to protect your home and investment.
+        </div>
+      </details>
+
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="relative py-24 md:py-32 bg-[#0f172a] overflow-hidden" style="font-family: 'Inter', sans-serif;">
+  <!-- Decorative Glowing Orbs for Supercharged CTA -->
+  <div class="absolute top-0 left-0 w-[500px] h-[500px] bg-[#d4af37] rounded-full mix-blend-screen filter blur-[150px] opacity-20 animate-pulse" style="animation-duration: 8s;"></div>
+  <div class="absolute bottom-0 right-0 w-[600px] h-[600px] bg-[#1e293b] rounded-full mix-blend-screen filter blur-[150px] opacity-60"></div>
+
+  <div class="max-w-6xl mx-auto px-6 sm:px-8 relative z-10">
+    <div class="grid lg:grid-cols-2 gap-16 lg:gap-24 items-center">
+      
+      <!-- Left Column: Copy & Info -->
+      <div class="text-white">
+        <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 border border-white/20 backdrop-blur-md mb-8">
+          <i data-lucide="zap" class="w-4 h-4 text-[#d4af37]"></i>
+          <span class="text-sm font-semibold tracking-wide uppercase text-gray-200">Get a Free Quote</span>
+        </div>
+        
+        <h2 class="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight" style="font-family: 'Plus Jakarta Sans', sans-serif;">
+          Experience <span class="text-[#d4af37]">Premium</span> Electrical Service.
+        </h2>
+        
+        <p class="text-lg text-gray-300 mb-10 leading-relaxed max-w-lg">
+          Whether you need a custom 220v circuit, a Generac generator installation, or comprehensive residential wiring, Grounded Electrical Company delivers punctual, professional, and fairly priced results. Friday quote to Monday completion.
+        </p>
+
+        <div class="space-y-6">
+          <div class="flex items-start gap-4 group">
+            <div class="w-12 h-12 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-[#d4af37] group-hover:bg-[#d4af37] group-hover:text-[#0f172a] transition-all duration-300">
+              <i data-lucide="phone-call" class="w-5 h-5"></i>
+            </div>
+            <div>
+              <p class="text-sm text-gray-400 mb-1">Call for Immediate Service</p>
+              <p class="text-lg font-semibold text-white">(717) 237-8546</p>
+            </div>
+          </div>
+          
+          <div class="flex items-start gap-4 group">
+            <div class="w-12 h-12 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-[#d4af37] group-hover:bg-[#d4af37] group-hover:text-[#0f172a] transition-all duration-300">
+              <i data-lucide="mail" class="w-5 h-5"></i>
+            </div>
+            <div>
+              <p class="text-sm text-gray-400 mb-1">Email Our Team</p>
+              <p class="text-lg font-semibold text-white">info@groundedelc.com</p>
+            </div>
+          </div>
+          
+          <div class="flex items-start gap-4 group">
+            <div class="w-12 h-12 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-[#d4af37] group-hover:bg-[#d4af37] group-hover:text-[#0f172a] transition-all duration-300">
+              <i data-lucide="map-pin" class="w-5 h-5"></i>
+            </div>
+            <div>
+              <p class="text-sm text-gray-400 mb-1">Service Area</p>
+              <p class="text-lg font-semibold text-white">Proudly serving the local region</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Column: Glassmorphism Form -->
+      <div class="relative">
+        <div class="absolute inset-0 bg-gradient-to-tr from-[#d4af37]/20 to-transparent rounded-3xl blur-xl transform -rotate-3 scale-105"></div>
+        <div class="bg-white/10 dark:bg-white/5 backdrop-blur-2xl border border-white/20 shadow-2xl rounded-3xl p-8 md:p-10 relative z-10">
+          <h3 class="text-2xl font-bold text-white mb-8" style="font-family: 'Plus Jakarta Sans', sans-serif;">Request Your Consultation</h3>
+          
+          <form id="contact-form" class="space-y-6">
+            <div class="space-y-2">
+              <label for="name" class="text-sm font-medium text-gray-300">Full Name</label>
+              <input type="text" id="name" name="name" required 
+                class="w-full px-5 py-4 bg-white/5 border border-white/10 rounded-xl text-white placeholder-gray-500 focus:ring-2 focus:ring-[#d4af37] focus:border-transparent transition-all duration-300 outline-none" 
+                placeholder="John Doe">
+            </div>
+            
+            <div class="space-y-2">
+              <label for="email" class="text-sm font-medium text-gray-300">Email Address</label>
+              <input type="email" id="email" name="email" required 
+                class="w-full px-5 py-4 bg-white/5 border border-white/10 rounded-xl text-white placeholder-gray-500 focus:ring-2 focus:ring-[#d4af37] focus:border-transparent transition-all duration-300 outline-none" 
+                placeholder="john@example.com">
+            </div>
+            
+            <div class="space-y-2">
+              <label for="message" class="text-sm font-medium text-gray-300">Project Details</label>
+              <textarea id="message" name="message" rows="4" required 
+                class="w-full px-5 py-4 bg-white/5 border border-white/10 rounded-xl text-white placeholder-gray-500 focus:ring-2 focus:ring-[#d4af37] focus:border-transparent transition-all duration-300 outline-none resize-none" 
+                placeholder="Tell us about your electrical needs (e.g., 220 line installation, panel upgrade...)"></textarea>
+            </div>
+            
+            <button type="submit" id="submit-btn" 
+              class="w-full px-8 py-4 bg-[#d4af37] text-[#0f172a] font-bold rounded-xl shadow-[0_0_20px_rgba(212,175,55,0.3)] hover:shadow-[0_0_30px_rgba(212,175,55,0.5)] hover:-translate-y-1 hover:bg-white transition-all duration-300 flex items-center justify-center gap-2">
+              Send Request <i data-lucide="arrow-right" class="w-5 h-5"></i>
+            </button>
+            <p id="form-status" class="text-sm text-center mt-4"></p>
+          </form>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  
+</section>
+
+<footer class="bg-[#1e293b] pt-20 pb-10 border-t border-white/5 relative overflow-hidden" style="font-family: 'Inter', sans-serif;">
+  <!-- Subtle background pattern -->
+  <div class="absolute inset-0 opacity-[0.03]" style="background-image: radial-gradient(#d4af37 1px, transparent 1px); background-size: 32px 32px;"></div>
+  
+  <div class="max-w-6xl mx-auto px-6 sm:px-8 relative z-10">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8 mb-16">
+      
+      <!-- Brand Column -->
+      <div class="space-y-6">
+        <a href="#" class="inline-flex items-center gap-2 text-2xl font-bold text-white" style="font-family: 'Plus Jakarta Sans', sans-serif;">
+          <i data-lucide="zap" class="w-6 h-6 text-[#d4af37] fill-[#d4af37]/20"></i>
+          Grounded <span class="text-[#d4af37]">Electrical</span>
+        </a>
+        <p class="text-gray-400 leading-relaxed text-sm">
+          Premium electrical services built on punctuality, transparency, and flawless execution. Rated 5 stars by our local community.
+        </p>
+        <div class="flex items-center gap-4 pt-2">
+          <a href="#" class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-gray-400 hover:bg-[#d4af37] hover:text-[#0f172a] hover:-translate-y-1 transition-all duration-300" aria-label="Facebook">
+            <svg class="w-4 h-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+          </a>
+          <a href="#" class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-gray-400 hover:bg-[#d4af37] hover:text-[#0f172a] hover:-translate-y-1 transition-all duration-300" aria-label="Instagram">
+            <svg class="w-4 h-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+          </a>
+          <a href="#" class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-gray-400 hover:bg-[#d4af37] hover:text-[#0f172a] hover:-translate-y-1 transition-all duration-300" aria-label="LinkedIn">
+            <svg class="w-4 h-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Quick Links -->
+      <div>
+        <h4 class="text-white font-semibold mb-6 uppercase tracking-wider text-sm" style="font-family: 'Plus Jakarta Sans', sans-serif;">Navigation</h4>
+        <ul class="space-y-4">
+          <li><a href="#services" class="text-gray-400 hover:text-[#d4af37] transition-colors duration-300 flex items-center gap-2"><i data-lucide="chevron-right" class="w-3 h-3"></i> Premium Services</a></li>
+          <li><a href="#process" class="text-gray-400 hover:text-[#d4af37] transition-colors duration-300 flex items-center gap-2"><i data-lucide="chevron-right" class="w-3 h-3"></i> Our Process</a></li>
+          <li><a href="#testimonials" class="text-gray-400 hover:text-[#d4af37] transition-colors duration-300 flex items-center gap-2"><i data-lucide="chevron-right" class="w-3 h-3"></i> Client Reviews</a></li>
+          <li><a href="#faq" class="text-gray-400 hover:text-[#d4af37] transition-colors duration-300 flex items-center gap-2"><i data-lucide="chevron-right" class="w-3 h-3"></i> FAQ</a></li>
+        </ul>
+      </div>
+
+      <!-- Services -->
+      <div>
+        <h4 class="text-white font-semibold mb-6 uppercase tracking-wider text-sm" style="font-family: 'Plus Jakarta Sans', sans-serif;">Specialties</h4>
+        <ul class="space-y-4">
+          <li><a href="#services" class="text-gray-400 hover:text-[#d4af37] transition-colors duration-300 flex items-center gap-2"><i data-lucide="chevron-right" class="w-3 h-3"></i> Generac Installations</a></li>
+          <li><a href="#services" class="text-gray-400 hover:text-[#d4af37] transition-colors duration-300 flex items-center gap-2"><i data-lucide="chevron-right" class="w-3 h-3"></i> Custom 220v Lines</a></li>
+          <li><a href="#services" class="text-gray-400 hover:text-[#d4af37] transition-colors duration-300 flex items-center gap-2"><i data-lucide="chevron-right" class="w-3 h-3"></i> 20 Amp Circuits</a></li>
+          <li><a href="#services" class="text-gray-400 hover:text-[#d4af37] transition-colors duration-300 flex items-center gap-2"><i data-lucide="chevron-right" class="w-3 h-3"></i> Panel Upgrades</a></li>
+        </ul>
+      </div>
+
+      <!-- Contact Info -->
+      <div>
+        <h4 class="text-white font-semibold mb-6 uppercase tracking-wider text-sm" style="font-family: 'Plus Jakarta Sans', sans-serif;">Contact Us</h4>
+        <ul class="space-y-4">
+          <li class="flex items-start gap-3 text-gray-400">
+            <i data-lucide="map-pin" class="w-5 h-5 text-[#d4af37] shrink-0 mt-0.5"></i>
+            <span>Available for high-end residential projects locally.</span>
+          </li>
+          <li class="flex items-center gap-3 text-gray-400">
+            <i data-lucide="phone" class="w-5 h-5 text-[#d4af37] shrink-0"></i>
+            <a href="#" class="hover:text-[#d4af37] transition-colors duration-300">(717) 237-8546</a>
+          </li>
+          <li class="flex items-center gap-3 text-gray-400">
+            <i data-lucide="mail" class="w-5 h-5 text-[#d4af37] shrink-0"></i>
+            <a href="#" class="hover:text-[#d4af37] transition-colors duration-300">info@groundedelc.com</a>
+          </li>
+          <li class="flex items-center gap-3 text-gray-400">
+            <i data-lucide="clock" class="w-5 h-5 text-[#d4af37] shrink-0"></i>
+            <span>Mon - Fri: 8:00 AM - 6:00 PM</span>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+
+    <!-- Bottom Bar -->
+    <div class="pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4">
+      <p class="text-gray-500 text-sm">
+        &copy; <script>document.write(new Date().getFullYear())</script> Grounded Electrical Company. All rights reserved.
+      </p>
+      <div class="flex gap-6 text-sm">
+        <a href="#" class="text-gray-500 hover:text-[#d4af37] transition-colors duration-300">Privacy Policy</a>
+        <a href="#" class="text-gray-500 hover:text-[#d4af37] transition-colors duration-300">Terms of Service</a>
+        <a href="#" class="text-gray-500 hover:text-[#d4af37] transition-colors duration-300">Licensing Info</a>
+      </div>
+    </div>
+  </div>
+</footer>
+</div>
+
+<script>
+  lucide.createIcons();
+  
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.animate-on-scroll').forEach(el => observer.observe(el));
+
+  const contactForm = document.getElementById('contact-form');
+  const formStatus = document.getElementById('form-status');
+  const submitBtn = document.getElementById('submit-btn');
+  if (contactForm) {
+    contactForm.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const originalText = submitBtn.textContent;
+      submitBtn.textContent = 'Sending...';
+      submitBtn.disabled = true;
+      try {
+        const formData = new FormData(contactForm);
+        const response = await fetch('https://zgnpmogdjnnhpwewavnr.supabase.co/functions/v1/contact-form-submit', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            projectId: '{{PROJECT_ID}}',
+            name: formData.get('name'),
+            email: formData.get('email'),
+            message: formData.get('message')
+          })
+        });
+        const data = await response.json();
+        if (response.ok) {
+          formStatus.textContent = 'Message sent successfully!';
+          formStatus.className = 'text-sm text-green-600';
+          contactForm.reset();
+        } else {
+          formStatus.textContent = data.error || 'Failed to send message.';
+          formStatus.className = 'text-sm text-red-600';
+        }
+      } catch (error) {
+        formStatus.textContent = 'Network error. Please try again.';
+        formStatus.className = 'text-sm text-red-600';
+      } finally {
+        submitBtn.textContent = originalText;
+        submitBtn.disabled = false;
+      }
+    });
+  }
+</script>
+</body>
+</html>
